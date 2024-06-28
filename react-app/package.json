@@ -1,0 +1,53 @@
+{
+  "name": "ma5terabsensi",
+  "private": true,
+  "version": "0.0.0",
+  "main": "./dist/main.cjs",
+  "type": "module",
+  "author": {
+    "name": "navetacandra",
+    "email": "naveta.cand@gmail.com",
+    "url": "https://github.com/navetacandra"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/navetacandra/presence-app.git"
+  },
+  "scripts": {
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "esbuild-cjs": "esbuild _electron.js --format=cjs --outfile=./dist/main.cjs",
+    "electron:dev": "npm run esbuild-cjs && set IS_IN_DEVELOPMENT=true && electron .",
+    "electron:build": "npm run esbuild-cjs && node _electron_build && electron-builder",
+    "electron:preview": "npm run esbuild-cjs && node _electron_build && electron ."
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
+    "chart.js": "^4.3.0",
+    "firebase": "^10.0.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react": "^4.0.1",
+    "electron": "^25.2.0",
+    "electron-builder": "^24.4.0",
+    "electron-packager": "^17.1.1",
+    "esbuild": "^0.18.11",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "vite": "^4.4.0"
+  }
+}
